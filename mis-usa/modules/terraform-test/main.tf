@@ -23,5 +23,5 @@ resource "aws_s3_bucket" "test_bucket" {
 # Manage the bucket ACL separately
 resource "aws_s3_bucket_acl" "test_bucket_acl" {
   bucket = aws_s3_bucket.test_bucket.id
-  acl    = "public-read"
+  acl    = "private"
 }
