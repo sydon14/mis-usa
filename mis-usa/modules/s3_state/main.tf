@@ -1,6 +1,6 @@
 # Shared Infrastructure: S3 Bucket for State Files
 resource "aws_s3_bucket" "state_bucket" {
-  bucket = "misusa-shared-terraform-state-bucket"
+  bucket = "musa-shared-terraform-state-bucket"
 
   tags = {
     Name        = "Shared Terraform State Bucket"
@@ -8,12 +8,7 @@ resource "aws_s3_bucket" "state_bucket" {
   }
 }
 
-# Separate resources for ACL and Server-Side Encryption
-resource "aws_s3_bucket_acl" "state_bucket_acl" {
-  bucket = aws_s3_bucket.state_bucket.id
-  acl    = "private"
-}
-
+# Separate resources for Server-Side Encryption
 resource "aws_s3_bucket_server_side_encryption_configuration" "state_bucket_encryption" {
   bucket = aws_s3_bucket.state_bucket.id
 

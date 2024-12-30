@@ -7,7 +7,7 @@ variable "aws_region" {
 variable "aws_profile" {
   description = "AWS profile for authentication"
   type        = string
-  default     = "terraform-profile"  # Replace with your profile 
+  default     = "Eviden"  # Replace with your profile 
 }
 
 variable "environment" {

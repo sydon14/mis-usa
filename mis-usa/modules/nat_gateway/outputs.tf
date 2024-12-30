@@ -3,11 +3,6 @@ output "nat_gateway_id" {
   value       = aws_nat_gateway.nat.id
 }
 
-output "nat_gateway_arn" {
-  description = "The ARN of the NAT Gateway"
-  value       = aws_nat_gateway.nat.arn
-}
-
 output "nat_gateway_public_ip" {
   description = "The public IP address of the NAT Gateway"
   value       = aws_eip.nat.public_ip
