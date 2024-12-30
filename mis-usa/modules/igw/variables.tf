@@ -1,12 +1,10 @@
-# Define the environment variable
-variable "environment" {
-  description = "The environment for the VPC"
-  type        = string
-}
-
-
 variable "vpc_id" {
-  description = "The ID of the VPC where the Internet Gateway will be attached"
+  description = "The ID of the VPC to attach the Internet Gateway to."
   type        = string
-  default     = ""  
 }
+
+variable "environment" {
+  description = "The environment for the IGW (e.g., dev, prod)."
+  type        = string
+}
+

@@ -1,6 +1,6 @@
 # Shared Infrastructure: S3 Bucket for State Files
 resource "aws_s3_bucket" "state_bucket" {
-  bucket = "misusa-shared-terraform-state-bucket"
+  bucket = "misusa-shared-terraform-state-bucket1"
 
   tags = {
     Name        = "Shared Terraform State Bucket"

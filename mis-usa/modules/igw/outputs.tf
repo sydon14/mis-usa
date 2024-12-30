@@ -1,9 +1,9 @@
 output "internet_gateway_id" {
-  description = "The ID of the Internet Gateway"
+  description = "The ID of the Internet Gateway."
   value       = aws_internet_gateway.igw.id
 }
 
-output "internet_gateway_arn" {
-  description = "The ARN of the Internet Gateway"
-  value       = aws_internet_gateway.igw.arn
+output "associated_vpc_id" {
+  description = "The ID of the VPC associated with the Internet Gateway."
+  value       = aws_internet_gateway.igw.vpc_id
 }

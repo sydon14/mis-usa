@@ -10,16 +10,10 @@ output "state_bucket_arn" {
   value       = aws_s3_bucket.state_bucket.arn
 }
 
-# Output the ACL of the S3 bucket
-output "state_bucket_acl" {
-  description = "The ACL of the S3 bucket."
-  value       = aws_s3_bucket_acl.state_bucket_acl.acl
-}
-
 # Output the encryption algorithm for the S3 bucket
 output "state_bucket_encryption" {
   description = "The server-side encryption configuration of the S3 bucket."
-  value       = aws_s3_bucket_server_side_encryption_configuration.state_bucket_encryption.rule[0].apply_server_side_encryption_by_default.sse_algorithm
+  value = [for rule in aws_s3_bucket_server_side_encryption_configuration.state_bucket_encryption.rule : rule.apply_server_side_encryption_by_default[0].sse_algorithm][0]
 }
 
 # Output the versioning status of the S3 bucket

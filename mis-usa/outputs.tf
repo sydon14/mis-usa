@@ -39,6 +39,7 @@ output "public_subnet_ids" {
   description = "The IDs of the public subnets"
   value       = [
     aws_subnet.dmz_subnet_ue1a.id,
+    aws_subnet.mgn_subnet_ue1a.id,
     aws_subnet.dmz_subnet_ue2a.id
   ]
 }
